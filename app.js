@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: `${BASE_URL}`,
     headers: {
-      "Access-Control-Allow-Origin": "https://api-products-5h9j.onrender.com/",
+      "Access-Control-Allow-Origin": `${BASE_URL}`,
       "Access-Control-Allow-Credentials": true,
     },
     methods: "GET, POST, PUT, DELETE",
