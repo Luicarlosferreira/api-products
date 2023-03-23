@@ -8,17 +8,9 @@ const BASE_URL = process.env.BASE_URL;
 
 app.use(cors());
 app.use(express.json());
-app.use(
-  cors({
-    origin: `${BASE_URL}`,
-    headers: {
-      "Access-Control-Allow-Origin": `${BASE_URL}`,
-      "Access-Control-Allow-Credentials": true,
-    },
-    methods: "GET, POST, PUT, DELETE",
-  })
-);
-
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+});
 const PORT = process.env.PORT;
 
 require("./src/routes/index")(app);
