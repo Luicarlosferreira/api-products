@@ -10,9 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use(
   cors({
-    origin: `${BASE_URL}`,
+    origin: `${BASE_URL}/products`,
     headers: {
-      "Access-Control-Allow-Origin": "https://slug-panel.onrender.com",
+      "Access-Control-Allow-Origin": `${BASE_URL}/products`,
       "Access-Control-Allow-Credentials": true,
     },
     methods: "GET, POST, PUT, DELETE",
