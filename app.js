@@ -15,6 +15,7 @@ app.use(
       "Access-Control-Allow-Origin": "https://slug-panel.onrender.com",
       "Access-Control-Allow-Credentials": true,
     },
+    methods: "GET, POST, PUT, DELETE",
   })
 );
 
