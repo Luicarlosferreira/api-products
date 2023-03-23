@@ -4,23 +4,19 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 const app = express();
+const BASE_URL = process.env.BASE_URL;
 
 app.use(cors());
 app.use(express.json());
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    `${process.env.BASE_URL}/products`
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
-});
+app.use(
+  cors({
+    origin: `${BASE_URL}`,
+    headers: {
+      "Access-Control-Allow-Origin": "https://slug-panel.onrender.com",
+      "Access-Control-Allow-Credentials": true,
+    },
+  })
+);
 
 const PORT = process.env.PORT;
 
