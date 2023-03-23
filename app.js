@@ -10,9 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use(
   cors({
-    origin: `${BASE_URL}/products`,
+    origin: `${BASE_URL}`,
     headers: {
-      "Access-Control-Allow-Origin": `${BASE_URL}/products`,
+      "Access-Control-Allow-Origin": `${BASE_URL}`,
       "Access-Control-Allow-Credentials": true,
     },
     methods: "GET, POST, PUT, DELETE",
