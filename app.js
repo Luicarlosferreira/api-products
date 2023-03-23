@@ -6,12 +6,13 @@ dotenv.config();
 const app = express();
 const BASE_URL = process.env.BASE_URL;
 
-app.use(cors());
+var corsOptions = {
+  origin: "*",
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+
 const PORT = process.env.PORT;
 
 require("./src/routes/index")(app);
