@@ -4,13 +4,8 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 const app = express();
-const BASE_URL = process.env.BASE_URL;
 
-var corsOptions = {
-  origin: "*",
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT;
