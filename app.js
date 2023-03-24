@@ -5,32 +5,16 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 
-// app.use(cors());
 app.use(express.json());
 const BASE = process.env.BASE_URL;
-
 const PORT = process.env.PORT;
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  const allowedOrigins = [
-    "http://localhost:5173",
-    `${BASE}/products`,
-    `${BASE}`,
-    "https://api-products-5h9j.onrender.com/products",
-  ];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Access-Control-Allow-credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
-  next();
-});
+const options = {
+  credentials: true,
+  origin: [`${BASE}`, "*"],
+  methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+};
+app.use(cors(options));
 
 require("./src/routes/index")(app);
 
