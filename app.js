@@ -13,9 +13,9 @@ const PORT = process.env.PORT;
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   const allowedOrigins = [
-    "http://localhost:3000",
-    "http://gamebrag.onrender.com",
-    "https://gamebrag.onrender.com",
+    "http://localhost:5173",
+    `${PORT}/products`,
+    `${PORT}`,
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
