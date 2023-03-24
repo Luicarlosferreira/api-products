@@ -9,13 +9,13 @@ app.use(express.json());
 
 const PORT = process.env.PORT;
 
-const options = {
-  credentials: true,
-  origin: ["*", "http://localhost:5173"],
-  methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-};
+// const options = {
+//   credentials: true,
+//   origin: true,
+//   methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+// };
 
-app.use(cors(options));
+app.use(cors());
 
 require("./src/routes/index")(app);
 
