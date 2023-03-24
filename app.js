@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT;
@@ -16,6 +16,7 @@ app.use(function (req, res, next) {
     "http://localhost:5173",
     `${PORT}/products`,
     `${PORT}`,
+    "https://api-products-5h9j.onrender.com/products",
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
