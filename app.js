@@ -9,13 +9,13 @@ app.use(express.json());
 const BASE = process.env.BASE_URL;
 const PORT = process.env.PORT;
 
-const options = {
-  credentials: true,
-  origin: [`${BASE}`, "*"],
-  methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-};
+// const options = {
+//   credentials: true,
+//   origin: ["*"],
+//   methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+// };
 
-app.use(cors(options));
+// app.use(cors(options));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
