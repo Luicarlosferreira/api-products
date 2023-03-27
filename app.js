@@ -8,7 +8,6 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-
 const PORT = process.env.PORT;
 
 require("./src/routes/index")(app);
