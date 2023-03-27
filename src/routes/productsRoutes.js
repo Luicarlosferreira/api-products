@@ -5,7 +5,7 @@ const {
 } = require("../controllers/product.controller");
 
 exports.productsRoute = (app) => {
-  app.post("/products", create);
+  app.post("/create", create);
 
   app.get("/products/all", get);
 
