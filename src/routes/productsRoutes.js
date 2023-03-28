@@ -3,10 +3,9 @@ const {
   get,
   getUniqueById,
 } = require("../controllers/product.controller");
-const cors = require("cors");
 
 exports.productsRoute = (app) => {
-  app.post("/create", cors(), create);
+  app.post("/create", create);
 
   app.get("/products/all", get);
 
