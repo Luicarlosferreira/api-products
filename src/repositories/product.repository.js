@@ -1,8 +1,11 @@
 const { prisma } = require("../services/prisma");
 
-exports.createProduct = async (data) => {
+exports.createProduct = async (res, req) => {
+  const { name, color, size } = req.body;
   const product = await prisma.products.create({
-    data,
+    name,
+    color,
+    size,
   });
 
   return product;
