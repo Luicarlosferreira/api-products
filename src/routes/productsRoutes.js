@@ -12,11 +12,6 @@ exports.productsRoute = (app) => {
     res.send("hello world");
   });
   app.post("/teste", (req, res) => {
-    const { name, color } = req.params;
-
-    res.send({
-      name,
-      color,
-    });
+    res.send(req.body);
   });
 };
