@@ -16,6 +16,6 @@ model Products {
   name    String   
   color    String
   size  String[]
-  quantity Int
+  quantity String
   
 }
