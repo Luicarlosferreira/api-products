@@ -10,7 +10,6 @@ app.use(express.json());
 const PORT = process.env.PORT || 3333;
 
 require("./src/routes/index")(app);
-var teste;
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
