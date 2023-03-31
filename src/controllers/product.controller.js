@@ -35,7 +35,7 @@ exports.getUniqueById = async (req, res) => {
 exports.deleteAll = async (req, res) => {
   try {
     await deleteAll(req.params);
-    res.status(200).send({ message: "All products deleted" });
+    res.status(200).send({ message: "All are products deleted" });
   } catch (error) {
     res.status(404).send(error);
   }
@@ -43,7 +43,7 @@ exports.deleteAll = async (req, res) => {
 
 exports.deleUniqueById = async (req, res) => {
   try {
-    await deleteUnique(req.body);
+    await deleteUnique(req.params.id);
     res.status(200).send({ message: "product deleted" });
   } catch (error) {
     res.status(404).send(error);
