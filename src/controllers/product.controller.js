@@ -43,7 +43,7 @@ exports.deleteAll = async (req, res) => {
 
 exports.deleUniqueById = async (req, res) => {
   try {
-    await deleteUnique(req.params.id);
+    await deleteUnique(req.body);
     res.status(200).send({ message: "product deleted" });
   } catch (error) {
     res.status(404).send(error);
