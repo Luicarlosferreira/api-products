@@ -2,6 +2,8 @@ const {
   createProduct,
   getAll,
   getUnique,
+  deleteAll,
+  deleteUnique,
 } = require("../repositories/product.repository");
 
 exports.create = async (req, res) => {
@@ -24,8 +26,25 @@ exports.get = async (req, res) => {
 
 exports.getUniqueById = async (req, res) => {
   try {
-    const uniqueProduct = await getUnique(req.body);
+    const uniqueProduct = await getUnique(req.params.id);
     res.status(200).send(uniqueProduct);
+  } catch (error) {
+    res.status(404).send(error);
+  }
+};
+exports.deleteAll = async (req, res) => {
+  try {
+    await deleteAll(req.params);
+    res.status(200).send({ message: "All products deleted" });
+  } catch (error) {
+    res.status(404).send(error);
+  }
+};
+
+exports.deleUniqueById = async (req, res) => {
+  try {
+    await deleteUnique(req.params.id);
+    res.status(200).send({ message: "product deleted" });
   } catch (error) {
     res.status(404).send(error);
   }

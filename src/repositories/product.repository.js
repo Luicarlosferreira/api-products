@@ -22,3 +22,15 @@ exports.getUnique = async (data) => {
   });
   return getProduct;
 };
+
+exports.deleteUnique = async (id) => {
+  await prisma.products.delete({
+    where: {
+      id,
+    },
+  });
+};
+
+exports.deleteAll = async () => {
+  await prisma.products.deleteMany({});
+};
