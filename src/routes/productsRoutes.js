@@ -11,5 +11,5 @@ exports.productsRoute = (app) => {
   app.get("/products", get);
   app.get("/products/:id", getUniqueById);
   app.delete("/products", deleteAll);
-  app.delete("/products:id", deleUniqueById);
+  app.delete("/products/:id", deleUniqueById);
 };
